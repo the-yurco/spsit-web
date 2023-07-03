@@ -34,33 +34,50 @@ const MainExpandedNavbar: React.FC<Props> = (props: Props) => {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<nav className="flex items-center h-10 gap-60 w-full">
 						<Image src={Logo} alt="school logo" width={95} height={50} />
-						<ul className="flex items-center justify-between w-full">
+						<ul className="flex items-center justify-between w-full overflow-y-hidden">
 							{MainNavbarLinks.map((link, index) => (
 								<li
 									key={index}
 									onMouseEnter={() => handleMenuHover(index)}
-									onMouseLeave={handleMenuLeave}
+									onMouseLeave={() => handleMenuHover(index)}
 								>
 									<p className="font-medium text-sm text-gray-950 hover:cursor-pointer">
 										{link.label}
 									</p>
 									{link.expandWrapper && expandedMenuIndex === index && (
-										<ul className="absolute left-0 mt-2 py-2 bg-white border border-gray-200 shadow-lg">
-											{link.expandWrapper.map((wrapper, wrapperIndex) => (
-												<li key={wrapperIndex}>
-													<p className="pl-4 pr-10 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-300">
-														{/* {wrapper.subLabel} */}
-													</p>
-													{wrapper.expandContainer.map(
-														(container, containerIndex) => (
-															<li key={containerIndex}>
-																<a className="block px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-300">
-																	{container.subLink}
-																</a>
+										<ul className="absolute left-0 mt-2 py-2 px-60 bg-white border flex w-screen transition-all duration-300">
+											{link.expandWrapper.map((container, containerIndex) => (
+												<React.Fragment key={containerIndex}>
+													<div>
+														{container.expandContainer &&
+															container.expandContainer[0].subLabel && (
+																<li className="transition-all duration-300 ease-in-out">
+																	<p className="pl-4 pr-10 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+																		{container.expandContainer[0].subLabel}
+																	</p>
+																</li>
+															)}
+														{container.expandContainer && (
+															<li className="flex flex-wrap justify-start pl-4 transition-all duration-300 ease-in-out delay-100">
+																<div className="">
+																	{container.expandContainer
+																		.slice(1)
+																		.map((item, itemIndex) => (
+																			<a
+																				key={itemIndex}
+																				className="block py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+																				href={item.path}
+																				target="_blank"
+																				rel="noopener noreferrer"
+																			>
+																				{item.subLink}
+																			</a>
+																		))}
+																</div>
 															</li>
-														)
-													)}
-												</li>
+														)}
+													</div>
+												</React.Fragment>
 											))}
 										</ul>
 									)}
