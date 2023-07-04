@@ -1,21 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
+import './MainExpandedNavbar.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiUser, FiChevronDown } from 'react-icons/fi';
-import { IoIosArrowDown } from 'react-icons/io';
 import MainNavbarLinks from '@/components/main-components/navbars/object-links/MainNavbarLinks';
 import Logo from '@/assets/logo.png';
 
-type Props = {};
+type Props = {
+	onClose: () => void;
+};
 
-interface ExpandContainer {
-	subLabel: string;
-	subLink: string;
-}
+// interface ExpandContainer {
+// 	subLabel: string;
+// 	subLink: string;
+// 	href: string;
+// }
 
-const MainExpandedNavbar: React.FC<Props> = (props: Props) => {
+const MainExpandedNavbar = ({ onClose }: Props) => {
 	const [expandedMenuIndex, setExpandedMenuIndex] = useState<number | null>(
 		null
 	);
@@ -29,45 +32,55 @@ const MainExpandedNavbar: React.FC<Props> = (props: Props) => {
 	};
 
 	return (
-		<div>
+		<div className="absolute w-screen">
 			<div className="bg-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<nav className="flex items-center h-10 gap-60 w-full">
-						<Image src={Logo} alt="school logo" width={95} height={50} />
-						<ul className="flex items-center justify-between w-full overflow-y-hidden">
+					<nav className="flex items-center h-12 gap-36 w-full">
+						<Link href={'/'}>
+							<Image src={Logo} alt="school logo" width={140} height={0} />
+						</Link>
+						<ul className="flex items-center  justify-evenly w-full  gap-10">
 							{MainNavbarLinks.map((link, index) => (
+								// MENU
 								<li
 									key={index}
 									onMouseEnter={() => handleMenuHover(index)}
 									onMouseLeave={() => handleMenuHover(index)}
 								>
-									<p className="font-medium text-sm text-gray-950 hover:cursor-pointer">
+									<Link
+										className=" font-normal text-md text-mainBlue hover:cursor-pointer hover:text-secondBlue"
+										href={link.path || '#'}
+									>
 										{link.label}
-									</p>
+									</Link>
+
+									{/* DROPDOWN */}
 									{link.expandWrapper && expandedMenuIndex === index && (
-										<ul className="absolute left-0 mt-2 py-2 px-60 bg-white border flex w-screen transition-all duration-300">
+										<ul
+											className="absolute left-0 mt-2 py-8 pl-52 flex gap-24 w-screen bg-mainWhite"
+											id="dropdown-menu"
+										>
 											{link.expandWrapper.map((container, containerIndex) => (
 												<React.Fragment key={containerIndex}>
-													<div>
+													<div className="">
 														{container.expandContainer &&
 															container.expandContainer[0].subLabel && (
-																<li className="transition-all duration-300 ease-in-out">
-																	<p className="pl-4 pr-10 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+																<li className="">
+																	<p className="pl-4 pr-10 py-2 text-sm text-secondBlue">
 																		{container.expandContainer[0].subLabel}
 																	</p>
 																</li>
 															)}
 														{container.expandContainer && (
-															<li className="flex flex-wrap justify-start pl-4 transition-all duration-300 ease-in-out delay-100">
+															<li className="flex flex-wrap justify-start pl-4  delay-100">
 																<div className="">
 																	{container.expandContainer
 																		.slice(1)
 																		.map((item, itemIndex) => (
 																			<a
 																				key={itemIndex}
-																				className="block py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+																				className="block py-2  text-mainBlue  text-lg font-semibold"
 																				href={item.path}
-																				target="_blank"
 																				rel="noopener noreferrer"
 																			>
 																				{item.subLink}
@@ -88,7 +101,7 @@ const MainExpandedNavbar: React.FC<Props> = (props: Props) => {
 							<div>
 								<FiUser
 									style={{ height: '50px' }}
-									className="text-gray-950 hover:cursor-pointer"
+									className=" text-mainBlue hover:cursor-pointer text-xl"
 								/>
 							</div>
 						</div>

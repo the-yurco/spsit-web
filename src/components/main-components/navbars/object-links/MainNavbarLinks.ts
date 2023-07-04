@@ -185,6 +185,9 @@ const MainNavbarLinks = [
 			{
 				expandContainer: [
 					{
+						subLabel: 'Život na škole'
+					},
+					{
 						subLink: 'Školská knižnica',
 						path: '/zivot-na-skole/skolska-kniznica',
 						exact: false
@@ -215,6 +218,9 @@ const MainNavbarLinks = [
 		expandWrapper: [
 			{
 				expandContainer: [
+					{
+						subLabel: 'Dôležité informácie'
+					},
 					{
 						subLink: 'Informácie pre prvákov',
 						path: 'http://www.spsknm.sk/stranka/sites/default/files/SPSITKNM.pdf',
@@ -253,6 +259,11 @@ const MainNavbarLinks = [
 				]
 			}
 		]
+	},
+	{
+		label: 'Fotoalbum',
+		path: '/fotoalbum',
+		exact: true
 	}
 ];
 

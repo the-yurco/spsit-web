@@ -1,0 +1,13 @@
+#dropdown-menu {
+	animation: dropDown 0.3s infinite !important;
+	transition: all 0.3s;
+}
+
+@keyframes dropDown {
+	0% {
+		height: 0 !important;
+	}
+	100% {
+		height: min-content !important;
+	}
+}

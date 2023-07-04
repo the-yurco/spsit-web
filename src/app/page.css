@@ -1,0 +1,10 @@
+#home-hero-section {
+  background: url("../assets/header-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* Set the section to take full width and height of the viewport */
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}/*# sourceMappingURL=page.css.map */
