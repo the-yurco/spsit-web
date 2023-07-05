@@ -11,3 +11,20 @@
 		height: min-content !important;
 	}
 }
+
+#main-expand-navbar {
+	animation: dropdown 0.3s ease-in;
+}
+
+@keyframes dropdown {
+	0% {
+		transform: translateY(-100px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+.blur {
+	filter: blur(5px);
+}

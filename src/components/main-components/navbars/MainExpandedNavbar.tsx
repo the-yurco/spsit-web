@@ -10,6 +10,7 @@ import Logo from '@/assets/logo.png';
 
 type Props = {
 	onClose: () => void;
+	onLinkHover: (hovered: boolean) => void;
 };
 
 // interface ExpandContainer {
@@ -18,21 +19,24 @@ type Props = {
 // 	href: string;
 // }
 
-const MainExpandedNavbar = ({ onClose }: Props) => {
+const MainExpandedNavbar = ({ onClose, onLinkHover }: Props) => {
 	const [expandedMenuIndex, setExpandedMenuIndex] = useState<number | null>(
 		null
 	);
+	const [isPageBlurred, setIsPageBlurred] = useState(false);
 
 	const handleMenuHover = (index: number) => {
 		setExpandedMenuIndex(index);
+		onLinkHover(true);
 	};
 
 	const handleMenuLeave = () => {
 		setExpandedMenuIndex(null);
+		onLinkHover(false);
 	};
 
 	return (
-		<div className="absolute w-screen">
+		<div className="absolute w-screen" id="main-expand-navbar">
 			<div className="bg-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<nav className="flex items-center h-12 gap-36 w-full">
@@ -48,7 +52,7 @@ const MainExpandedNavbar = ({ onClose }: Props) => {
 									key={index}
 									//? These functions are responsible for managing the state or behavior when the mouse enters or leaves a specific list item
 									onMouseEnter={() => handleMenuHover(index)}
-									onMouseLeave={() => handleMenuHover(index)}
+									onMouseLeave={() => handleMenuLeave()}
 								>
 									<Link
 										className=" font-normal text-md text-mainBlue hover:cursor-pointer hover:text-secondBlue"
