@@ -40,10 +40,13 @@ const MainExpandedNavbar = ({ onClose }: Props) => {
 							<Image src={Logo} alt="school logo" width={140} height={0} />
 						</Link>
 						<ul className="flex items-center  justify-evenly w-full  gap-10">
+							{/* This expression maps over an array called MainNavbarLinks and generates list items (<li>) for each element in the array */}
 							{MainNavbarLinks.map((link, index) => (
-								// MENU
+								//! MENU
+								//? Each list item has a unique key attribute assigned to it
 								<li
 									key={index}
+									//? These functions are responsible for managing the state or behavior when the mouse enters or leaves a specific list item
 									onMouseEnter={() => handleMenuHover(index)}
 									onMouseLeave={() => handleMenuHover(index)}
 								>
@@ -55,11 +58,16 @@ const MainExpandedNavbar = ({ onClose }: Props) => {
 									</Link>
 
 									{/* DROPDOWN */}
+									{/*  Here is a conditional rendering block using the && operator */}
+									{/*  It checks if the current link has an expandWrapper property and if the expandedMenuIndex (presumably a state variable) matches the current index */}
+									{/* If both conditions are true, it renders a nested unordered list (<ul>) as a dropdown menu */}
 									{link.expandWrapper && expandedMenuIndex === index && (
 										<ul
 											className="absolute left-0 mt-2 py-8 pl-52 flex gap-24 w-screen bg-mainWhite"
 											id="dropdown-menu"
 										>
+											{/* JavaScript expression that maps over an array called expandWrapper for each container */}
+											{/* Each container represents a dropdown menu container within the overall dropdown menu */}
 											{link.expandWrapper.map((container, containerIndex) => (
 												<React.Fragment key={containerIndex}>
 													<div className="">
