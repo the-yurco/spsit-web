@@ -1,22 +1,32 @@
 import Image from 'next/image';
 import './page.scss';
+import BiSolidDownArrow from 'react-icons/bi';
 
 export default function Home() {
 	return (
 		<div className="">
 			<section
-				className="home-hero-section flex justify-center items-end"
+				className="home-hero-section flex justify-center items-end pb-40"
 				id="home-hero-section"
 			>
 				<div>
-					<ul className="flex gap-10">
-						<li className="text-xl font-semibold text-mainWhite">O NÁS</li>
-						<li className="text-xl font-semibold text-mainWhite">
-							ŠTUDIJNÉ ODBORY
-						</li>
-						<li className="text-xl font-semibold text-mainWhite">NOVINKY</li>
-						<li className="text-xl font-semibold text-mainWhite">AREÁL</li>
-					</ul>
+					<div>
+						<ul className="flex gap-16">
+							<li className="text-2xl font-medium text-mainWhite  ">
+								<p className="drop-shadow-xl">O NÁS</p>
+							</li>
+							<li className="text-2xl font-medium text-mainWhite">
+								<p>ŠTUDIJNÉ ODBORY</p>
+							</li>
+							<li className="text-2xl font-medium text-mainWhite">
+								<p>NOVINKY</p>
+							</li>
+							<li className="text-2xl font-medium text-mainWhite">
+								<p>AREÁL</p>
+							</li>
+						</ul>
+					</div>
+					<div>{/* <BiSolidDownArrow /> */}</div>
 				</div>
 			</section>
 			<section>

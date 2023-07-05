@@ -23,7 +23,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="en">
-			<body className={`${montserrat.className},  overflow-x-hidden`}>
+			<body className={`${montserrat.className},  overflow-x-hidden bg-mainBg`}>
 				{isNavbarExpanded ? (
 					<MainExpandedNavbar onClose={() => setIsNavbarExpanded(false)} />
 				) : (
