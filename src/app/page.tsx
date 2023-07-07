@@ -90,6 +90,7 @@ export default function Home() {
 					</div>
 					<div>
 						<MyCarousel />
+						<MyCarousel />
 					</div>
 				</div>
 			</section>
