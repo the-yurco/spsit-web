@@ -20,3 +20,10 @@ body {
   color: black;
   background: white
 }
+
+#hero-section{
+  background-image: url('/background-imh.png');
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  background-position: center;
+}
