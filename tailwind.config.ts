@@ -12,7 +12,8 @@ const config: tailwindcss.Config = {
     },
     colors:{
       'mainGreen': '#86C725',
-      'secondBlue': '#212737'
+      'secondBlue': '#212737',
+      'white': '#ffffff'
     }
   },
   plugins: [],

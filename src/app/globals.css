@@ -21,9 +21,33 @@ body {
   background: white
 }
 
-#hero-section{
+#hero-section {
+  position: relative;
   background-image: url('/background-imh.png');
   background-repeat: no-repeat;
-  /* background-size: contain; */
   background-position: center;
 }
+
+#hero-section::before,
+#hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0,0.9), rgba(255, 255, 255, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+#hero-section::after {
+  top: auto;
+  bottom: 0;
+  /* background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+}
+
+#top-news{
+  background-image: url('/1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
