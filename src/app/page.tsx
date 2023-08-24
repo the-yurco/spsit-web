@@ -95,10 +95,46 @@ export default function Home() {
       </div>
       <div className="skewed"></div>
     </section>
-
-
-
     {/* // ABOUT SECTION end */}
+
+    {/* // STATS SECTION start */}
+    <section id='stats-section' className='w-screen relative z-40 h-64 flex justify-between items-center'>
+      <div className='container px-28 flex justify-center gap-32 items-center pt-6'>
+        <div className='flex flex-col gap-10 items-center'>
+        <div className="relative w-28 h-28 bg-secondBlue transform rotate-45 skew-y-45  border-2 border-mainGreen">
+            <div className="absolute inset-0 flex items-center justify-center transform -rotate-45 -skew-y-45">
+              <p className="text-mainGreen font-bold text-xl">700</p>
+            </div>
+        </div> 
+        <div><h3 className='uppercase font-semibold text-lg'>žiakov</h3></div>
+        </div>
+        <div className='flex flex-col gap-10 items-center'>
+        <div className="relative w-28 h-28 bg-secondBlue transform rotate-45 skew-y-45  border-2 border-mainGreen">
+            <div className="absolute inset-0 flex items-center justify-center transform -rotate-45 -skew-y-45">
+              <p className="text-mainGreen font-bold text-xl">32</p>
+            </div>
+        </div> 
+        <div><h3 className='uppercase font-semibold text-lg'>tried</h3></div>
+        </div>
+        <div className='flex flex-col gap-10 items-center'>
+        <div className="relative w-28 h-28 bg-secondBlue transform rotate-45 skew-y-45  border-2 border-mainGreen">
+            <div className="absolute inset-0 flex items-center justify-center transform -rotate-45 -skew-y-45">
+              <p className="text-mainGreen font-bold text-xl">6</p>
+            </div>
+        </div> 
+        <div><h3 className='uppercase font-semibold text-lg'>odborov</h3></div>
+        </div>
+        <div className='flex flex-col gap-10 items-center'>
+        <div className="relative w-28 h-28 bg-secondBlue transform rotate-45 skew-y-45  border-2 border-mainGreen">
+            <div className="absolute inset-0 flex items-center justify-center transform -rotate-45 -skew-y-45">
+              <p className="text-mainGreen font-bold text-xl">240</p>
+            </div>
+        </div> 
+        <div><h3 className='uppercase font-semibold text-lg'>maturantov</h3></div>
+        </div>
+      </div>
+    </section>
+    {/* // STATS SECTION end */}
     </>
 
   )

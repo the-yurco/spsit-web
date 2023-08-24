@@ -72,3 +72,10 @@ body {
   transform: skewY(11deg);
   transform-origin: 160%;
 }
+
+#stats-section{
+  background-image: url('/Slice 1 1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
