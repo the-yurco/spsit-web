@@ -49,5 +49,13 @@ body {
   background-image: url('/1.png');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+}
+
+#second-news{
+  background-image: url('/2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
