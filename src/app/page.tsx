@@ -74,10 +74,15 @@ export default function Home() {
     {/* // NEWS SECTION end */}
 
     {/* // ABOUT SECTION start */}
-    <section id='about-section' className='h-screen w-screen bg-white'>
-      <div className='container mx-auto pl-28 grid grid-rows-6 pt-10'>
-      </div>
-    </section>
+    <section id='about-section' className='h-screen w-screen relative'>
+  <div className='container mx-auto pl-28 grid grid-rows-6 pt-10'>
+  </div>
+  <div className='absolute top-0 left-0 w-1/2 h-full transform -skew-x-12 bg-mainGreen'></div>
+  <div className='absolute top-0 right-0 w-1/2 h-full transform skew-x-12 bg-white'></div>
+</section>
+
+
+
     {/* // ABOUT SECTION end */}
     </>
 
