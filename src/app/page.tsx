@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import {RxDoubleArrowDown} from 'react-icons/rx'
 import {FaChevronRight, FaChevronLeft} from 'react-icons/fa6';
+// import { Carousel } from '@/components/Carousel';
 
 export default function Home() {
   return (
@@ -98,7 +99,7 @@ export default function Home() {
     {/* // ABOUT SECTION end */}
 
     {/* // STATS SECTION start */}
-    <section id='stats-section' className='w-screen relative z-40 h-64 flex justify-between items-center'>
+    <section id='stats-section' className='w-screen relative z-50 h-80 flex justify-between items-center'>
       <div className='container px-28 flex justify-center gap-32 items-center pt-6'>
         <div className='flex flex-col gap-10 items-center'>
         <div className="relative w-28 h-28 bg-secondBlue transform rotate-45 skew-y-45  border-2 border-mainGreen">
@@ -135,6 +136,22 @@ export default function Home() {
       </div>
     </section>
     {/* // STATS SECTION end */}
+
+    {/* // STUDY SECTION start */}
+    <section id='stud-fields-section' className='h-screen w-screen relative bg-white z-20 '>
+      <div className='container mx-auto px-28 pt-8'>
+        <div className='row-start-1 row-end-2 flex justify-between text-white py-8 items-center relative z-50'>
+          <h3 className='uppercase text-xl font-normal'>Ponúkame moderné <br /> štúdijné odbory </h3>
+          <h1 className='relative text-3xl font-semibold'>
+            <div className='absolute top-0 right-0 transform w-10 h-1 bg-mainGreen'></div>
+            Študijné odbory
+          </h1>
+        </div>
+        {/* <Carousel/> */}
+      </div>
+    <div className="skewed2"></div>
+    </section>
+    {/* // STUDY SECTION end */}
     </>
 
   )
