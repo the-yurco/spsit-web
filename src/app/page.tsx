@@ -27,7 +27,7 @@ export default function Home() {
     {/* // HERO SECTION end */}
 
     {/* // NEWS SECTION start */}
-    <section id='news-section' className='h-screen w-screen bg-secondBlue'>
+    <section id='news-section' className='h-screen w-screen bg-secondBlue relative z-40'>
     <div className='container mx-auto px-28 grid grid-rows-6 pt-10'>
       <div className='row-start-1 row-end-2 flex justify-between text-white py-8 items-center relative'>
         <h3 className='uppercase text-xl font-normal'>DôLEžITé INFORMáCIE</h3>
@@ -74,12 +74,27 @@ export default function Home() {
     {/* // NEWS SECTION end */}
 
     {/* // ABOUT SECTION start */}
-    <section id='about-section' className='h-screen w-screen relative'>
-  <div className='container mx-auto pl-28 grid grid-rows-6 pt-10'>
-  </div>
-  <div className='absolute top-0 left-0 w-1/2 h-full transform -skew-x-12 bg-mainGreen'></div>
-  <div className='absolute top-0 right-0 w-1/2 h-full transform skew-x-12 bg-white'></div>
-</section>
+    <section id='about-section' className='h-screen w-screen relative bg-mainGreen z-30'>
+      <div className='container  ml-24 grid grid-rows-3 grid-cols-5 pt-10'>
+        <div className='flex flex-col gap-3 py-8 row-start-1 row-end-4 col-start-1 col-end-2'>
+          <h1 className='relative text-3xl font-bold z-50'>
+            <div className='absolute top-0 left-0 transform w-10 h-1 bg-mainGreen text-secondBlue'></div>
+            O nás
+          </h1>
+          <h3 className='relative uppercase text-xl font-normal text-secondBlue z-50'>PRIPRAVUJEME ŠTUDENTOV 
+            NA BUDÚCNOSŤ
+          </h3>
+        </div>
+        <div className='relative row-start-2 row-end-3 col-start-1 col-end-4 z-50 mt-20'>
+          <h3 className='text-white text-xl font-semibold'>Prečo mi?</h3>
+          <p className='text-white text-md w-3/6'>Sme moderná škola zameraná na informačné technológie, počítačové siete, mechatronické systémy, strojársku výrobu a logistiku. Ponúkame praktické a inovatívne vzdelávanie, ktoré pripravuje študentov na úspešnú kariéru v technologickom svete.</p>
+        </div>
+        <div className=' row-start-1 row-end-3 col-start-3 col-end-6 pt-20 flex justify-end'>
+          <Image src={'/about.png'} alt={''} height={300} width={700} className='relative z-50 right-0 border-2 border-secondBlue'/>
+        </div>
+      </div>
+      <div className="skewed"></div>
+    </section>
 
 
 
